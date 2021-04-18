@@ -55,3 +55,10 @@ foreach(SHADER ${SHADERS})
     watch(${SHADER})
 endforeach()
 
+
+set(OpenGlLinkers -lglut -lGLU -lGL)
+
+find_package(GLUT REQUIRED)
+find_package(OpenGL REQUIRED)
+include_directories( ${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} )
+target_link_libraries(project_base ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
