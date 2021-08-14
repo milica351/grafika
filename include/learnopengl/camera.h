@@ -70,10 +70,12 @@ public:
     void ProcessKeyboard(Camera_Movement direction, float deltaTime)
     {
         float velocity = MovementSpeed * deltaTime;
+
         if (direction == FORWARD)
             Position += Front * velocity;
         if (direction == BACKWARD)
             Position -= Front * velocity;
+        velocity = velocity / 2;
         if (direction == LEFT)
             Position -= Right * velocity;
         if (direction == RIGHT)
@@ -109,7 +111,7 @@ public:
         if (Zoom < 1.0f)
             Zoom = 1.0f;
         if (Zoom > 45.0f)
-            Zoom = 45.0f; 
+            Zoom = 45.0f;
     }
 
 private:
