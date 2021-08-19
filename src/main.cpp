@@ -533,7 +533,7 @@ int main() {
 
         //KUTIJA
         model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(12.0f,-3.0f,7.8f));
+        model = glm::translate(model, glm::vec3(14.0f,-5.0f,11.8f));
         model = glm::rotate(model,glm::radians(-90.0f),glm::vec3(1.0,0,0.0));
         model = glm::rotate(model,glm::radians(45.0f),glm::vec3(0.0,0.0,1.0));
         model = glm::scale(model, glm::vec3(0.03f,0.03f,0.03f));
@@ -542,7 +542,7 @@ int main() {
 
         //POMORANDZA
         model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(10.50f,-3.2f,7.8f));
+        model = glm::translate(model, glm::vec3(12.50f,-5.2f,11.8f));
         model = glm::rotate(model,glm::radians(-90.0f),glm::vec3(1.0,0,0.0));
         model = glm::rotate(model,glm::radians(45.0f),glm::vec3(0.0,0.0,1.0));
         model = glm::scale(model, glm::vec3(0.03f,0.03f,0.03f));
