@@ -389,9 +389,9 @@ int main() {
     //NE MENJAJ !!!!!!!!!!!!!!!!!!!!
     //-----------------------------------------------
     glm::vec3 pointLightPositions[] = {
-            glm::vec3(19.0f,10.0f,7.8f), //kutija
-            glm::vec3(12.0f,10.0f,-5.8f), //pas
-            glm::vec3(6.0f,10.0f,6.8f) //lopta
+            glm::vec3(13.0f,1.8f,7.8f), //kutija
+            glm::vec3(12.0f,-2.0f,-3.8f), //pas
+            glm::vec3(6.0f ,-7.0 ,6.8f) //lopta
     };
     //------------------------------------------------
     stbi_set_flip_vertically_on_load(false);
@@ -443,9 +443,9 @@ int main() {
         pointLight.ambient = glm::vec3(0.1, 0.1, 0.1);
         pointLight.diffuse = glm::vec3(0.6, 0.6, 0.6);
         pointLight.specular = glm::vec3(1.0, 1.0, 1.0);
-        pointLight.constant = 0.1f;
-        pointLight.linear = 0.03f;
-        pointLight.quadratic = 0.032f;
+        pointLight.constant = 0.8f;
+        pointLight.linear = 0.0014f;
+        pointLight.quadratic = 0.000007f;
         ourShader.use();
 
 
@@ -456,8 +456,8 @@ int main() {
         ourShader.setVec3("pointLight.diffuse", glm::vec3(0.1, sin(glfwGetTime()*1.5), 0.7));
         ourShader.setVec3("pointLight.specular", pointLight.specular);
         ourShader.setFloat("pointLight.constant", pointLight.constant);
-        ourShader.setFloat("pointLight.linear", pointLight.linear);
-        ourShader.setFloat("pointLight.quadratic", pointLight.quadratic);
+        ourShader.setFloat("pointLight.linear", pointLight.linear + 0.05);
+        ourShader.setFloat("pointLight.quadratic", pointLight.quadratic + 0.05);
         ourShader.setVec3("viewPosition", programState->camera.Position);
         ourShader.setFloat("material.shininess", 32.0f);
 
@@ -606,7 +606,7 @@ int main() {
         {
             model = glm::mat4(1.0f);
             model = glm::translate(model, pointLightPositions[i]);
-            // model = glm::scale(model, glm::vec3(0.7f)); // Make it a smaller cube
+            model = glm::scale(model, glm::vec3(0.08f)); // Make it a smaller cube
             lightCubeShader.setMat4("model", model);
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
